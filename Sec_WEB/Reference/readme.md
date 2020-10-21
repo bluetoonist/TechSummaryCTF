@@ -1,6 +1,9 @@
 # Reference 
 <h2>TOC</h2>
 &nbsp;&nbsp;&nbsp;&nbsp; 1. X-Forwarded-For<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 2. Cooke<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 3. SSRF<br>
+
 
 ## X-forwareded-for
 ```
@@ -8,4 +11,21 @@
 
 Example >>
 curl -H "X-Forwarded-For:127.0.0.1" -XGET http://DNS
+```
+
+## Cookie
+```
+클라이언트에 저장되는 쿠키의 값을 변조해서 플래그를 얻을 수 있음
+
+Case 1, HackCTF : Cookie
+- Cookie Value를 base64 디코딩
+- Cookie에 저장된 값을 bypassing (php)
+```
+
+# SSRF
+```
+: Server-Side Request Forgery 
+: 서버가 사용자 입력을 받아 직접 웹이나 포트에 접근해 데이터를 가져오는 기능에서 발생
+
+Case1, HackCTF : LOL
 ```
